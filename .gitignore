@@ -10,3 +10,7 @@ cdk.out
 outputs.json
 
 .github/context-mode
+
+tmp*
+*.tmp
+tmp/
