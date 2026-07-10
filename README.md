@@ -13,7 +13,7 @@ $ cdk --version
 
 ## 動かし方
 
-AWS Lambda Functions URLs を1個デプロイする。
+AWS Lambda Functions URLs を 1 個デプロイする。
 中身は "hello world".
 
 ```sh
