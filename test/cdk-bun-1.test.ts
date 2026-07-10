@@ -1,7 +1,3 @@
-// import * as cdk from 'aws-cdk-lib/core';
-// import { Template } from 'aws-cdk-lib/assertions';
-// import * as CdkBun1 from '../lib/cdk-bun-1-stack';
-
 import { App } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import { test } from "bun:test";
