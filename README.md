@@ -52,9 +52,20 @@ STACK_SUFFIX=dev
 
 ## メモ
 
+### ロググループの自動生成をやめる
+
 `cdk.json` の
 `"@aws-cdk/aws-lambda:useCdkManagedLogGroup": false`
 で、ロググループの自動生成を止めています。
 命名規則やライフサイクル、削除ポリシーを制御したいので。
 
 参考: [❗NOTICE (aws-lambda): Lambda cdk managed log group duplicates · Issue #34612 · aws/aws-cdk](https://github.com/aws/aws-cdk/issues/34612)
+
+### cdk-nag (v3)
+
+`cdk-nag` の `AwsSolutions-IAM4` は、IAM ロールやユーザーが AWS managed policy を使っていることを指すルールです。
+このプロジェクトでは Lambda の実行ロールに `AWSLambdaBasicExecutionRole` が付くため、`bin/cdk-bun-1.ts` で app ルートに acknowledge を 1 回だけ書いて抑制しています。
+
+参考:
+- [cdk-nag RULES.md](node_modules/cdk-nag/RULES.md)
+- [cdk-nag README.md](node_modules/cdk-nag/README.md)
