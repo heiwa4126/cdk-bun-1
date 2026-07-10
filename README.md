@@ -1,6 +1,6 @@
 # cdk-bun-1
 
-AWS CDK を全部 bun でやるテスト。
+AWS CDK (TypeScript) を全部 bun でやるテスト。
 
 TypeScript, ts-node, jest なし (esbuild あり)
 
