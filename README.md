@@ -52,7 +52,9 @@ STACK_SUFFIX=dev
 
 ## メモ
 
-cdk.json の
+`cdk.json` の
 `"@aws-cdk/aws-lambda:useCdkManagedLogGroup": false`
 で、ロググループの自動生成を止めています。
 命名規則やライフサイクル、削除ポリシーを制御したいので。
+
+参考: [❗NOTICE (aws-lambda): Lambda cdk managed log group duplicates · Issue #34612 · aws/aws-cdk](https://github.com/aws/aws-cdk/issues/34612)
