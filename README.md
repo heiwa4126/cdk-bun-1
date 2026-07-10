@@ -11,6 +11,8 @@ $ cdk --version
 2.1129.0 (build 629ca49)
 ```
 
+[cdk-bun-2](https://github.com/heiwa4126/cdk-bun-2) に続く...
+
 ## 動かし方
 
 AWS Lambda Functions URLs を 1 個デプロイする。
