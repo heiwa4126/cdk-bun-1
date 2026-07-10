@@ -1,6 +1,6 @@
 import * as cdk from "aws-cdk-lib";
 import * as lambda from "aws-cdk-lib/aws-lambda";
-import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
+import { NodejsFunction, OutputFormat } from "aws-cdk-lib/aws-lambda-nodejs";
 import * as logs from "aws-cdk-lib/aws-logs";
 import { Construct } from "constructs";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
@@ -15,6 +15,7 @@ export class CdkBun1Stack extends cdk.Stack {
 			runtime: lambda.Runtime.NODEJS_24_X,
 			bundling: {
 				minify: true, // minifyオプションを有効にする
+				format: OutputFormat.ESM, // ES Modulesを使用する
 				// externalModules: ["aws-sdk"], // AWS SDKは外部モジュールとして扱う（デフォルト）
 			},
 		});

@@ -1,8 +1,8 @@
 # cdk-bun-1
 
-AWS CDK (TypeScript) を全部 bun でやるテスト。
+AWS CDK (TypeScript) を全部 [Bun](https://bun.com/) でやるテスト。
 
-TypeScript, ts-node, jest なし。esbuild あり
+TypeScript, ts-node, jest なし。esbuild あり(これはいまのところ難しい)
 
 ```console
 $ bun -v
@@ -12,6 +12,9 @@ $ cdk --version
 ```
 
 ## 動かし方
+
+AWS Lambda Functions URLs を1個デプロイする。
+中身は "hello world".
 
 ```sh
 bun ci
@@ -26,6 +29,7 @@ bun run test
 # デプロイ
 aws login
 bun run deploy
+## URLが表示されるのでブラウザなどで開く
 
 # おわったら消す
 bun run destroy
