@@ -31,7 +31,8 @@ bun run test
 # デプロイ
 aws login
 bun run deploy
-## URLが表示されるのでブラウザなどで開く
+#-- URLが表示されるのでブラウザなどで開く
+bun run curl  # curl と jq があれば動く
 
 # おわったら消す
 bun run destroy
