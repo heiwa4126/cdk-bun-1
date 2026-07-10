@@ -70,7 +70,7 @@ STACK_SUFFIX=dev
 これ除外ルールにしてるのは、「これを本気で除外しようとするととてつもなく面倒で、サンプルの域を超えるから」です。
 詳しくはそこらの AI Chat で "cdk-nag(v3) の AwsSolutions-IAM4 が警告対象になる理由を教えて" とか聞いてください。
 
-参考:
+参考 (`bun ci` のあとにクリックしてください):
 
 - [cdk-nag RULES.md](node_modules/cdk-nag/RULES.md)
 - [cdk-nag README.md](node_modules/cdk-nag/README.md)
