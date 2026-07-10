@@ -2,8 +2,14 @@
 import * as cdk from "aws-cdk-lib/core";
 import { CdkBun1Stack } from "../lib/cdk-bun-1-stack";
 
+function getStackName(baseStackName: string, rawSuffix?: string): string {
+	return rawSuffix ? `${baseStackName}-${rawSuffix}` : baseStackName;
+}
+
 const app = new cdk.App();
-new CdkBun1Stack(app, "CdkBun1Stack", {
+const rawSuffix = process.env.STACK_SUFFIX?.trim();
+
+new CdkBun1Stack(app, getStackName("CdkBun1Stack", rawSuffix), {
 	/* If you don't specify 'env', this stack will be environment-agnostic.
 	 * Account/Region-dependent features and context lookups will not work,
 	 * but a single synthesized template can be deployed anywhere. */

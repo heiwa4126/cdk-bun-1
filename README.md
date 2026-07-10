@@ -35,6 +35,21 @@ bun run deploy
 bun run destroy
 ```
 
+### スタック名サフィックス
+
+環境変数 `STACK_SUFFIX` を設定すると、スタック名の末尾にサフィックスが付きます。
+
+[Bun は自動で .env を読む](https://bun.com/docs/runtime/environment-variables#setting-environment-variables)
+ので、`.env` に書くといいでしょう。
+
+```sh
+# .env
+STACK_SUFFIX=dev
+```
+
+- `STACK_SUFFIX` が未設定または空文字 ⇒ スタック名: `CdkBun1Stack`
+- `STACK_SUFFIX=dev` ⇒ スタック名: `CdkBun1Stack-dev`
+
 ## メモ
 
 cdk.json の

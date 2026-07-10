@@ -14,3 +14,8 @@ outputs.json
 tmp*
 *.tmp
 tmp/
+
+# local env vars
+.env
+.env.*
+!.env.example
