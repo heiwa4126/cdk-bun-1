@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { App, Validations } from "aws-cdk-lib/core";
 import { AwsSolutionsChecks } from "cdk-nag";
 import { CdkBun1Stack } from "../lib/cdk-bun-1-stack";
@@ -9,11 +8,6 @@ function getStackName(baseStackName: string, rawSuffix?: string): string {
 
 const app = new App();
 const rawSuffix = process.env.STACK_SUFFIX?.trim();
-
-app.node.addMetadata(Validations.ACKNOWLEDGED_RULES_METADATA_KEY, {
-	"annotation::AwsSolutions-IAM4[Policy::arn:<AWS::Partition>:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole]":
-		"Lambda basic execution role is required so the function can write logs to CloudWatch Logs.",
-});
 
 new CdkBun1Stack(app, getStackName("CdkBun1Stack", rawSuffix), {
 	/* If you don't specify 'env', this stack will be environment-agnostic.
@@ -28,4 +22,9 @@ new CdkBun1Stack(app, getStackName("CdkBun1Stack", rawSuffix), {
 	/* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
 
+// cdk-nag things
+app.node.addMetadata(Validations.ACKNOWLEDGED_RULES_METADATA_KEY, {
+	"annotation::AwsSolutions-IAM4[Policy::arn:<AWS::Partition>:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole]":
+		"Lambda basic execution role is required so the function can write logs to CloudWatch Logs.",
+});
 Validations.of(app).addPlugins(new AwsSolutionsChecks(app));
