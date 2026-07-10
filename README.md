@@ -18,3 +18,10 @@ bun run deploy
 # おわったら消す
 bun run destroy
 ```
+
+## メモ
+
+cdk.jsonの
+`"@aws-cdk/aws-lambda:useCdkManagedLogGroup": false`
+で、ロググループの自動生成を止めています。
+命名規則やライフサイクル、削除ポリシーを制御したいので。
