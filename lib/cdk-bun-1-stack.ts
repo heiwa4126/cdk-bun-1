@@ -15,14 +15,14 @@ export class CdkBun1Stack extends cdk.Stack {
 			runtime: lambda.Runtime.NODEJS_24_X,
 			bundling: {
 				minify: true, // minifyオプションを有効にする
-				format: OutputFormat.ESM, // ES Modulesを使用する
+				format: OutputFormat.ESM // ES Modulesを使用する
 				// externalModules: ["aws-sdk"], // AWS SDKは外部モジュールとして扱う（デフォルト）
-			},
+			}
 		});
 		new logs.LogGroup(this, "lambda1LogGroup", {
 			logGroupName: `/aws/lambda/${fn.functionName}`,
 			removalPolicy: cdk.RemovalPolicy.DESTROY,
-			retention: logs.RetentionDays.ONE_WEEK,
+			retention: logs.RetentionDays.ONE_WEEK
 		});
 
 		// Lambda Function URL版
@@ -31,12 +31,12 @@ export class CdkBun1Stack extends cdk.Stack {
 			cors: {
 				// テストなんで極甘で
 				allowedMethods: [lambda.HttpMethod.ALL],
-				allowedOrigins: ["*"],
-			},
+				allowedOrigins: ["*"]
+			}
 		});
 
 		new cdk.CfnOutput(this, "fnUrl", {
-			value: fnUrl.url,
+			value: fnUrl.url
 		});
 	}
 }

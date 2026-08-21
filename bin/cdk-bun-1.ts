@@ -25,6 +25,6 @@ new CdkBun1Stack(app, getStackName("CdkBun1Stack", rawSuffix), {
 // cdk-nag things
 app.node.addMetadata(Validations.ACKNOWLEDGED_RULES_METADATA_KEY, {
 	"annotation::AwsSolutions-IAM4[Policy::arn:<AWS::Partition>:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole]":
-		"Lambda basic execution role is required so the function can write logs to CloudWatch Logs.",
+		"Lambda basic execution role is required so the function can write logs to CloudWatch Logs."
 });
 Validations.of(app).addPlugins(new AwsSolutionsChecks(app));
